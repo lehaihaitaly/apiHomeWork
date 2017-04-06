@@ -1,3 +1,56 @@
-<% @responses.each do |response| %>
-   <%= response[:first] %>
-<% end %>
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center
+}
+</style>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#myTable').DataTable({
+        "scrollY":        "400px",
+        "scrollCollapse": true,
+        "paging":         true
+      });
+  });
+</script>
+</head>
+<body>
+<div id="information">
+      <table id ="myTable" class="display" style="width:100%" text-align:center>
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Created</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <th><%= user.id %></th>
+          <th><%= user.first %></th>
+          <th><%= user.last %></th>
+          <th><%= user.email %></th>
+          <th><%= user.address %></th>
+          <th><%= user.created %></th>
+          <th><%= user.balance %></th>
+        </tr>
+      <% end %>
+      </tbody>
+      </table>
+</div>
+</body>
+</html>
+
+
+
+
