@@ -22,3 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Go to rails console and type User.populate to retrieve the data from API
